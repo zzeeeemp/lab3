@@ -2,10 +2,8 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 
-// Middleware dla obsługi danych z formularzy
 app.use(express.urlencoded({ extended: true }));
 
-// Endpoint dla strony głównej
 app.get('/', (req, res) => {
   res.send(`
     <html>
@@ -19,7 +17,6 @@ app.get('/', (req, res) => {
   `);
 });
 
-// Endpoint dla strony student
 app.get('/student', (req, res) => {
   res.send(`
     <html>
@@ -33,7 +30,6 @@ app.get('/student', (req, res) => {
   `);
 });
 
-// Endpoint dla strony dodawania studenta
 app.get('/add-student', (req, res) => {
   res.send(`
     <html>
@@ -47,7 +43,6 @@ app.get('/add-student', (req, res) => {
   `);
 });
 
-// Nasłuchuj na określonym porcie
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
